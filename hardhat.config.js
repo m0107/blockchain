@@ -26,7 +26,7 @@ module.exports = {
   },
     networks: {
       localhost: {
-        url: "http://127.0.0.1:49675",
+        url: "http://127.0.0.1:49636",
         chainId: 585858,
         accounts: ["0xbcdf20249abf0ed6d944c0288fad489e33f66b3960d9e6229c1cd214ed3bbe31"]
         // accounts: [ privateKey, ... ]   // Provide your private keys if needed
