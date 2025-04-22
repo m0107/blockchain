@@ -1,0 +1,33 @@
+{
+  "name": "rbac-user-management",
+  "version": "1.0.0",
+  "description": "Dynamic RBAC and User Management system with SDK",
+  "main": "src/blockchainSDK.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.js --network local",
+    "test": "hardhat test",
+    "clean": "rm -rf cache/ artifacts/"
+  },
+  "keywords": [
+    "hardhat",
+    "solidity",
+    "rbac",
+    "web3",
+    "blockchain"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "web3": "^1.10.0",
+    "@openzeppelin/contracts": "^4.9.0"
+  },
+  "devDependencies": {
+    "hardhat": "^2.16.0",
+    "ethers": "^5.7.2",
+    "@nomiclabs/hardhat-ethers": "^2.2.0",
+    "chai": "^4.3.0",
+    "eslint": "^8.0.0"
+  }
+}
