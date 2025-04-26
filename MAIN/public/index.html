@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Aadhaar OTP Flow</title>
+  <style>
+    #otpModal {
+      display: none;
+      position: fixed; top:0; left:0;
+      width:100%; height:100%;
+      background: rgba(0,0,0,0.5);
+      align-items: center;
+      justify-content: center;
+    }
+    #otpModal .box {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <button id="createUserBtn">Create User</button>
+  <div id="otpModal">
+    <div class="box">
+      <p>Enter the OTP sent to your Aadhaar-linked mobile:</p>
+      <input type="text" id="otpInput" maxlength="6" /><br/><br/>
+      <button id="submitOtpBtn">Submit OTP</button>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

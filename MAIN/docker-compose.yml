@@ -1,0 +1,48 @@
+version: "3.7"
+
+services:
+  postgres:
+    image: postgres:11
+    environment:
+      POSTGRES_USER:     chainlink
+      POSTGRES_PASSWORD: chainlink
+      POSTGRES_DB:       chainlink
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "chainlink"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  chainlink-node:
+    image: smartcontract/chainlink:1.2.0
+    restart: on-failure
+    environment:
+      ROOT:                       "/chainlink"
+      FEATURE_EXTERNAL_ADAPTERS:  "true"
+      # tell libpq not to use SSL:
+      DATABASE_URL:               "postgresql://chainlink:chainlink@postgres:5432/chainlink?sslmode=disable"
+      ETH_URL:                    "ws://host.docker.internal:49480"
+      ETH_CHAIN_ID:               "${CHAIN_ID}"
+      MIN_OUTGOING_CONFIRMATIONS: "1"
+      API_PORT:                   "6688"
+      SECURE_COOKIES:             "false"
+    command:
+      - local
+      - n
+      - -p
+      - /chainlink/keystore_password.txt
+      - -a
+      - /chainlink/api_credentials.txt
+    volumes:
+      - ./chainlink-data:/chainlink
+      - ./adapters:/chainlink/adapters
+      - ./keystore_password.txt:/chainlink/keystore_password.txt:ro
+      - ./api_credentials.txt:/chainlink/api_credentials.txt:ro
+    ports:
+      - "6688:6688"
+      - "6789:6789"
+    depends_on:
+      postgres:
+        condition: service_healthy

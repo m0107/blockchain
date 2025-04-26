@@ -4,10 +4,12 @@
   "description": "Dynamic RBAC and User Management system with SDK",
   "main": "src/blockchainSDK.js",
   "scripts": {
-    "compile": "hardhat compile",
-    "deploy": "hardhat run scripts/deploy.js --network local",
     "test": "hardhat test",
-    "clean": "rm -rf cache/ artifacts/"
+    "clean": "rm -rf cache/ artifacts/",
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy-all.js --network local",
+    "test-otp": "node scripts/test-chainlink-otp.js",
+    "start-adpt": "node adapters/chainlink-dummy-otp-adapter.js"
   },
   "keywords": [
     "hardhat",
@@ -19,15 +21,19 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^16.0.0",
-    "web3": "^1.10.0",
-    "@openzeppelin/contracts": "^4.9.0"
+    "@chainlink/contracts": "^1.3.0",
+    "@openzeppelin/contracts": "^4.9.0",
+    "axios": "^1.4.0",
+    "dotenv": "^16.5.0",
+    "express": "^4.18.2",
+    "uuid": "^9.0.0",
+    "web3": "^1.10.0"
   },
   "devDependencies": {
-    "hardhat": "^2.16.0",
-    "ethers": "^5.7.2",
     "@nomiclabs/hardhat-ethers": "^2.2.0",
     "chai": "^4.3.0",
-    "eslint": "^8.0.0"
+    "eslint": "^8.0.0",
+    "ethers": "^5.7.2",
+    "hardhat": "^2.16.0"
   }
 }

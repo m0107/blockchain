@@ -1,0 +1,15 @@
+type = "directrequest"
+schemaVersion = 1
+name = "Dummy Aadhaar OTP"
+externalJobID = "68b59c99-24e3-4d9e-b722-3ed996db9aa1"
+maxTaskDuration = "0s"
+contractAddress = "0x703848F4c85f18e3acd8196c8eC91eb0b7Bd0797"
+minIncomingConfirmations = 0
+observationSource = """
+otp [type=bridge name="otpAdapter" requestData="{\\"endpoint\\":\\"generate\\",\\"aadhaar\\":\\"$(jobRun.request.params.aadhaar)\\"}"];
+parse [type=jsonparse path="data.otp"];
+encode [type=ethabiencode abi="bytes32" data="{\\"_otp\\": $(parse)}"];
+send [type=ethtx];
+
+otp -> parse -> encode -> send;
+"""

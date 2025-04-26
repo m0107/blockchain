@@ -1,0 +1,48 @@
+exit
+const Link = await ethers.getContractFactory( "@chainlink/contracts/src/v0.8/tests/LinkToken.sol:LinkToken");
+console.log("Mock LINK token at:", link.address);
+// 3) Copy its address
+await link.deployed();
+const link = await Link.deploy();
+// 2) Deploy it
+);
+  "@chainlink/contracts/src/v0.8/tests/LinkToken.sol:LinkToken"
+const Link = await ethers.getContractFactory(
+// 1) Load the LinkToken contract
+console.log("Mock LINK token at:", link.address);
+// 3) Copy its address
+await link.deployed();
+const link = await Link.deploy();
+// 2) Deploy it
+);
+  "@chainlink/contracts/src/v0.8/tests/LinkToken.sol:LinkToken"
+const Link = await ethers.getContractFactory(
+// 1) Load the LinkToken contract
+const Link1 = await ethers.getContractFactory( "@chainlink/contracts/src/v0.8/tests/LinkToken.sol:LinkToken");
+const link1 = await Link.deploy();
+const link = await Link.deploy();
+await link.deployed(); await link.deployed()
+await link.deployed(); await link.deployed
+link
+await link.deployed();
+const link = await Link.deploy();
+const Link = await ethers.getContractFactory( "@chainlink/contracts/src/v0.8/tests/LinkToken.sol:LinkToken");
+console.log("Mock LINK token at:", link.address);
+// 3) Copy its address
+await link.deployed();
+const link = await Link.deploy();
+// 2) Deploy it
+);
+  "@chainlink/contracts/src/v0.8/tests/LinkToken.sol:LinkToken"
+const Link = await ethers.getContractFactory(
+// 1) Load the LinkToken contract
+clear 
+console.log("Mock LINK token at:", link.address);
+// 3) Copy its address
+await link.deployed();
+const link = await Link.deploy();
+// 2) Deploy it
+);
+  "@chainlink/contracts/src/v0.8/tests/LinkToken.sol:LinkToken"
+const Link = await ethers.getContractFactory(
+// 1) Load the LinkToken contract

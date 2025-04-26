@@ -1,0 +1,30 @@
+{
+    "schemaVersion": 1,
+    "name": "Dummy Aadhaar OTP",
+    "initiators": [
+      {
+        "type": "runLog",
+        "params": {
+          "address": "0x703848F4c85f18e3acd8196c8eC91eb0b7Bd0797"
+        }
+      }
+    ],
+    "tasks": [
+      {
+        "type": "Bridge",
+        "params": {
+          "name": "otpAdapter",
+          "requestData": {
+            "endpoint": "generate",
+            "aadhaar": "{{.JobRun.RequestParams.aadhaar}}"
+          }
+        }
+      },
+      {
+        "type": "JSONParse",
+        "params": { "path": "data.otp" }
+      },
+      { "type": "EthBytes32" },
+      { "type": "EthTx" }
+    ]
+  }

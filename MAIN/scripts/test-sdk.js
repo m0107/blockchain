@@ -20,10 +20,10 @@ async function run() {
   await sdk.assignFunctionRole("EDITOR", sig);
   console.log("✅ updateUser() now requires EDITOR");
 
-  // 4️⃣ Create a user (you’re ADMIN_ROLE)
-  const result = await sdk.createUser("A-123", { name: "Alice" }, "0000", "QmCID");
-  console.log(result);
-  console.log("✅ User A-123 created");
+  // // 4️⃣ Create a user (you’re ADMIN_ROLE)
+  // const result = await sdk.createUser("A-123", { name: "Alice" }, "0000", "QmCID");
+  // console.log(result);
+  // console.log("✅ User A-123 created");
 
   // 5️⃣ Attempt update from ADMIN (should revert)
   try {
